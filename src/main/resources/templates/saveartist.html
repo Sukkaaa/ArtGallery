@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Artists</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css"/>
+    <script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/5.2.3/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a th:href="@{/index}" class="navbar-brand" href="#">Art Muse 🎀</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a th:href="@{/index}" class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/gallery}">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/artists}" class="nav-link">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/about}" >About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--fin nav bar-->
+
+<div layout:fragment="content">
+    <div class="p-4">
+        <form th:action="@{/saveartist}" method="post">
+            <div th:class="mb-2">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" th:value="${artist.name}">
+            </div>
+
+            <div th:class="mb-2">
+                <label class="form-label">Bio</label>
+                <input type="text" name="bio" class="form-control" th:value="${artist.bio}">
+            </div>
+
+            <div th:class="mb-2">
+                <label class="form-label">Location</label>
+                <input type="text" name="location" class="form-control" th:value="${artist.location}">
+
+            </div>
+            <button  class="btn btn-primary">Sign up</button>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
