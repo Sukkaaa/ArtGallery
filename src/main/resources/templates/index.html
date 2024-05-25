@@ -1,10 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Muse 🎀</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css"/>
+    <style>
+        .gallery-item {
+            margin-bottom: 20px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-$END$
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a th:href="@{/index}" class="navbar-brand" href="#">Art Muse 🎀</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/gallery}" class="nav-link" href="#">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/artists}" class="nav-link">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/about}">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<div class="header bg-light py-3 mb-4">
+    <div class="container d-flex align-items-center justify-content-between">
+        <div>
+            <h1 class="mb-0">Welcome to our Art Gallery</h1>
+            <p class="mb-0">Discover a world of creativity and imagination.</p>
+        </div>
+        <div class="text-end">
+            <span class="me-2">Are you an artist?</span>
+            <a th:href="@{/newartists}" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<!-- Gallery Section
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/The_Swing_%28P430%29.jpg" alt="Artwork 1">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Thomas_Eakins%2C_American_-_Portrait_of_Dr._Samuel_D._Gross_%28The_Gross_Clinic%29_-_Google_Art_Project.jpg" alt="Artwork 2">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/1200px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg" alt="Artwork 3">
+            </div>
+        </div>
+         Add more gallery items as needed
+     </div>
+    </div> -->
+<style>
+    .gallery-item {
+        margin-bottom: 30px;
+        perspective: 1000px;
+        width: 100%; /* Ensures the container takes full width of the column */
+    }
+
+    .flipper {
+        position: relative;
+        width: 100%;
+        height: 300px; /* Set a fixed height */
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+    }
+
+    .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        top: 0;
+        left: 0;
+    }
+
+    .front img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+    }
+
+    .back {
+        transform: rotateY(180deg);
+        background-color: #f8f9fa;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Prevents content overflow */
+    }
+
+    .flipped .flipper {
+        transform: rotateY(180deg);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/The_Swing_%28P430%29.jpg" alt="The Swing">
+                    </div>
+                    <div class="back">
+                        <h3>The Swing</h3>
+                        <p>Jean-Honoré Fragonard's 'The Swing' is a masterpiece of Rococo painting, depicting a young woman on a swing being pushed by her lover. The painting captures the essence of frivolity and romance, with its lush surroundings and playful composition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Thomas_Eakins%2C_American_-_Portrait_of_Dr._Samuel_D._Gross_%28The_Gross_Clinic%29_-_Google_Art_Project.jpg" alt="The Gross Clinic">
+                    </div>
+                    <div class="back">
+                        <h3>The Gross Clinic</h3>
+                        <p>Thomas Eakins' 'The Gross Clinic' is a seminal work of American realism, depicting Dr. Samuel D. Gross performing surgery. The painting's raw depiction of medical procedure and its impact on society make it a powerful commentary on the human condition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/1200px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg" alt="Las Meninas">
+                    </div>
+                    <div class="back">
+                        <h3>Las Meninas</h3>
+                        <p>Diego Velázquez's 'Las Meninas' is a masterful exploration of space, light, and perspective. The painting's intricate composition and enigmatic characters have fascinated viewers for centuries, inviting interpretation and speculation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more gallery items as needed -->
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+<footer class="bg-light py-3">
+    <div class="container text-center">
+        <p class="m-0">&copy; 2024 Art Muse. All rights reserved.</p>
+    </div>
+</footer>
+
+
 </body>
 </html>

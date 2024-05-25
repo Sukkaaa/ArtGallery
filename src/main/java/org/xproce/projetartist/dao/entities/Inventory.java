@@ -1,4 +1,4 @@
-package dao.entities;
+package org.xproce.projetartist.dao.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

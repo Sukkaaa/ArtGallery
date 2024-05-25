@@ -1,4 +1,4 @@
-package dao.entities;
+package org.xproce.projetartist.dao.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 @Entity
-@Table
+@Table (name = "Users")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,8 +18,10 @@ public class User {
     private String email;
     private String password;
     private String adress;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "buyer")
    private List<ArtPiece> purchaseHistory;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "favoritedBy")
    private List<ArtPiece> favoriteArtworks;
+    @OneToMany(mappedBy = "reviewer")
+    private List<Review> reviews;
 }

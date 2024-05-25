@@ -1,6 +1,9 @@
-package dao.repositories;
+package org.xproce.projetartist.dao.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.xproce.projetartist.dao.entities.Tags;
 
-public interface TagsRepository extends JpaRepository<TagsRepository,Long> {
+@Repository
+public interface TagsRepository extends JpaRepository<Tags,Long> {
 }

@@ -1,4 +1,4 @@
-package dao.entities;
+package org.xproce.projetartist.dao.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,6 +16,7 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String Url;
-    @ManyToOne
-    private ArtPiece artPiece;
+
+
+
 }

@@ -1,4 +1,4 @@
-package dao.entities;
+package org.xproce.projetartist.dao.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,13 @@ public class Review {
     private String title;
     private String text;
     private Date timestamp;
-    private boolean verifiedPurchase;
+    private Boolean verifiedPurchase;
+    @ManyToOne
+    private  User reviewer;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn (name="artist_id")
+    private Artist artist;
+
 
 
 }

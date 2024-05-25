@@ -1,8 +1,9 @@
-package metier;
+package org.xproce.projetartist.metier;
 
-import dao.entities.ArtPiece;
+import org.xproce.projetartist.dao.entities.ArtPiece;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
+import org.xproce.projetartist.dao.entities.Inventory;
 
 @Component
 public interface ArtPieceManager {

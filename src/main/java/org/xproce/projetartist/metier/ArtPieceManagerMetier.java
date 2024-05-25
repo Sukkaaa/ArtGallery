@@ -1,7 +1,8 @@
-package metier;
+package org.xproce.projetartist.metier;
 
-import dao.entities.ArtPiece;
-import dao.repositories.ArtPieceRepository;
+import org.xproce.projetartist.dao.entities.ArtPiece;
+import org.xproce.projetartist.dao.entities.Inventory;
+import org.xproce.projetartist.dao.repositories.ArtPieceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,6 +18,7 @@ public class ArtPieceManagerMetier implements ArtPieceManager{
         return artPieceRepository.save(artPiece);
     }
 
+
     @Override
     public Page<ArtPiece> getAllArtPieces(int page, int taille) {
         return artPieceRepository.findAll(PageRequest.of(page, taille));
@@ -24,7 +26,7 @@ public class ArtPieceManagerMetier implements ArtPieceManager{
 
     @Override
     public Page<ArtPiece> searchArtPieces(String keyword, int page, int taille) {
-        return artPieceRepository.findByDesignationContains(keyword, PageRequest.of(page,taille));
+        return artPieceRepository.findByTitleContains(keyword, PageRequest.of(page,taille));
     }
 
     @Override

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Artists</title>
+    <title>Art Pieces</title>
     <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css"/>
     <script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
     <script src="/webjars/bootstrap/5.2.3/js/bootstrap.bundle.js"></script>
@@ -42,31 +42,27 @@
     <div class="row mt-3">
         <div class="col-md-6 offset-3">
             <div class="card">
-                <div class="card-header">New artist ^^</div>
+                <div class="card-header">New artwork ✨</div>
                 <div class="card-body"></div>
                 <div class="p-4">
-                    <form th:action="@{/saveartist}" method="post">
+                    <form th:action="@{/saveart}" method="post">
                         <div th:class="mb-2">
                             <label class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control" th:value="${artist.name}">
-                            <span class="text-danger" th:errors="${artist.name}"></span>
+                            <input type="text" name="title" class="form-control" th:value="${art.title}">
+                            <span class="text-danger" th:errors="${art.title}"></span>
                         </div>
 
                         <div th:class="mb-2">
-                            <label class="form-label">Bio</label>
-                            <input type="text" name="bio" class="form-control" th:value="${artist.bio}">
-                            <span class="text-danger" th:errors="${artist.bio}"></span>
+                            <label class="form-label">Description</label>
+                            <input type="text" name="description" class="form-control" th:value="${art.description}">
+                            <span class="text-danger" th:errors="${art.description}"></span>
                         </div>
 
-                        <div th:class="mb-2">
-                            <label class="form-label">Location</label>
-                            <input type="text" name="location" class="form-control" th:value="${artist.location}">
-                            <span class="text-danger" th:errors="${artist.location}"></span>
-                        </div>
+
                         <div th:class="mb-2">
                             <label class="form-label">Image</label>
-                            <input type="text" name="image" class="form-control" th:value="${artist.image}">
-                            <span class="text-danger" th:errors="${artist.image}"></span>
+                            <input type="text" name="image" class="form-control" th:value="${art.image}">
+                            <span class="text-danger" th:errors="${art.image}"></span>
                         </div>
                         <button  onclick="return confirm('Confirm your profile creation??')" class="btn btn-primary">Sign up</button>
                     </form>

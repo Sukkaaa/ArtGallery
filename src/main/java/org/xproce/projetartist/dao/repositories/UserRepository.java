@@ -1,6 +1,6 @@
-package dao.repositories;
+package org.xproce.projetartist.dao.repositories;
 
-import dao.entities.User;
+import org.xproce.projetartist.dao.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

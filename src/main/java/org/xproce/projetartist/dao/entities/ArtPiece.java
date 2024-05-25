@@ -1,10 +1,11 @@
-package dao.entities;
+package org.xproce.projetartist.dao.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.List;
 @Entity
 @Table
@@ -19,20 +20,23 @@ public class ArtPiece {
     private Long id;
     private String title;
     @ManyToOne
+    @JoinColumn (name = "artist_id")
     private Artist artist;
     private String medium;
     private String dimensions;
     private String description;
-    private double price;
+    private BigDecimal price;
     private boolean available;
-    @ManyToMany(mappedBy = "artpiece",fetch =FetchType.LAZY)
+    @ManyToMany(mappedBy = "artPieces",fetch =FetchType.LAZY)
     private List<Tags> tags;
-    @OneToMany(mappedBy = "artpiece",fetch=FetchType.LAZY)
-   private List<Image> images; //url for the images //retrieve image from url and display
-    @ManyToOne
+
+   private String image; //url for the images //retrieve image from url and display
+    @ManyToOne(fetch = FetchType.LAZY)
     private User buyer;
-    @ManyToOne
+    @ManyToOne(fetch =FetchType.LAZY)
     private User favoritedBy;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Inventory inventory;
 
 
 }

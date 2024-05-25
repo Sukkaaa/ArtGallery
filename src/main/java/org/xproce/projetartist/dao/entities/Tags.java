@@ -1,4 +1,4 @@
-package dao.entities;
+package org.xproce.projetartist.dao.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,5 +21,11 @@ public class Tags {
     private String description;
     private int usageCount; //represents the number pf times the tag has been used
     @ManyToMany(fetch =FetchType.LAZY )
+    @JoinTable(
+
+            name="artpiece_tag",
+            joinColumns = @JoinColumn(name = "tag_id"),
+            inverseJoinColumns = @JoinColumn(name = "artpiece_id")
+    )
     private List<ArtPiece> artPieces;
 }
