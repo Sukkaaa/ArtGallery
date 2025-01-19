@@ -1,9 +1,6 @@
 package org.xproce.projetartist;
 
 import org.springframework.context.annotation.Bean;
-//import org.springframework.security.config.Customizer;
-//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-//import org.springframework.security.web.SecurityFilterChain;
 import org.xproce.projetartist.dao.entities.ArtPiece;
 import org.xproce.projetartist.dao.entities.Artist;
 import org.xproce.projetartist.dao.repositories.ArtPieceRepository;
@@ -14,7 +11,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.math.BigDecimal;
-//import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 
 @SpringBootApplication
 public class ProjetArtistApplication implements CommandLineRunner {
@@ -24,23 +20,6 @@ public class ProjetArtistApplication implements CommandLineRunner {
 
     @Autowired
     public ArtPieceRepository artPieceRepository;
-
-    /*@Bean
-    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-
-        http
-
-                .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/").authenticated()
-                        .requestMatchers( "/webjars/**" , "/h2-console/**").permitAll())
-                .csrf((csrf) -> csrf.disable())
-                .cors(AbstractHttpConfigurer::disable)
-                .headers(AbstractHttpConfigurer::disable)
-                .formLogin(Customizer.withDefaults())
-                .httpBasic(Customizer.withDefaults());
-
-        return http.build();
-    }*/
     public static void main(String[] args)
     {
         SpringApplication.run(ProjetArtistApplication.class, args);
@@ -48,8 +27,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        //load initial data into the database here
-        //Loading Artists
+
         Artist artist=new Artist();
         artist.setName("UV");
         artist.setBio("A 21 year old artist stuck between reality and fantasy (Also the creator of this website ");
@@ -116,9 +94,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         artist10.setImage("https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Cropped_version_of_Jan_Vermeer_van_Delft_002.jpg/640px-Cropped_version_of_Jan_Vermeer_van_Delft_002.jpg");
         artistRepository.save(artist10);
 
-        //artistRepository.findAll().forEach(p->System.out.println(p.getName()));
 
-        // For Pablo Picasso - Guernica
         ArtPiece art1 = new ArtPiece();
         art1.setArtist(artist1);
         art1.setTitle("Guernica");
@@ -129,7 +105,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art1.setImage("https://upload.wikimedia.org/wikipedia/en/thumb/7/74/PicassoGuernica.jpg/400px-PicassoGuernica.jpg");
         artPieceRepository.save(art1);
 
-// For Vincent van Gogh - Starry Night
+
         ArtPiece art11 = new ArtPiece();
         art11.setArtist(artist2);
         art11.setTitle("Starry Night");
@@ -140,7 +116,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art11.setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK_fDw2BwRYJa-nzmGmeHsFQOg7HA_-KmfcL--f-bMSg&s");
         artPieceRepository.save(art11);
 
-// For Leonardo da Vinci - Mona Lisa
+
         ArtPiece art2 = new ArtPiece();
         art2.setArtist(artist3);
         art2.setTitle("Mona Lisa");
@@ -151,7 +127,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art2.setImage("https://ichef.bbci.co.uk/images/ic/480xn/p096q1j7.jpg.webp");
         artPieceRepository.save(art2);
 
-// For Claude Monet - Water Lilies
+
         ArtPiece art3 = new ArtPiece();
         art3.setArtist(artist4);
         art3.setTitle("Water Lilies");
@@ -162,7 +138,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art3.setImage("https://collectionapi.metmuseum.org/api/collection/v1/iiif/438008/preview");
         artPieceRepository.save(art3);
 
-// For Salvador Dalí - The Persistence of Memory
+
         ArtPiece art4 = new ArtPiece();
         art4.setArtist(artist5);
         art4.setTitle("The Persistence of Memory");
@@ -173,7 +149,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art4.setImage("https://cdn.britannica.com/96/240496-138-66D89FAD/Salvador-Dali-Persistence-of-Memory.jpg?w=800&h=450&c=crop");
         artPieceRepository.save(art4);
 
-// For Georgia O'Keeffe - Red Canna
+
         ArtPiece art5 = new ArtPiece();
         art5.setArtist(artist6);
         art5.setTitle("Red Canna");
@@ -184,9 +160,9 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art5.setImage("https://upload.wikimedia.org/wikipedia/en/c/ca/Red_Canna_%281924%29_by_Georgia_O%27Keeffe.jpg");
         artPieceRepository.save(art5);
 
-// For Michelangelo
+
         ArtPiece art6 = new ArtPiece();
-        art6.setArtist(artist7); // Michelangelo
+        art6.setArtist(artist7);
         art6.setTitle("David");
         art6.setDescription("Michelangelo's 'David' is a masterpiece of Renaissance sculpture, celebrated for its idealized beauty.");
         art6.setMedium("Marble Sculpture");
@@ -195,9 +171,9 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art6.setImage("https://www.visittuscany.com/shared/visittuscany/immagini/blogs/idea/david-michelangelo-big.jpg?__scale=w:1920,h:1000,t:2,q:85");
         artPieceRepository.save(art6);
 
-// For Rembrandt
+
         ArtPiece art7 = new ArtPiece();
-        art7.setArtist(artist8); // Rembrandt
+        art7.setArtist(artist8);
         art7.setTitle("The Night Watch");
         art7.setDescription("Rembrandt's 'The Night Watch' epitomizes the drama and dynamism of Baroque painting, capturing civic guardsmen in vivid detail.");
         art7.setMedium("Oil Painting on Canvas");
@@ -206,9 +182,9 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art7.setImage("https://ychef.files.bbci.co.uk/1280x720/p070wbmx.jpg");
         artPieceRepository.save(art7);
 
-// For Frida Kahlo
+
         ArtPiece art8 = new ArtPiece();
-        art8.setArtist(artist9); // Frida Kahlo
+        art8.setArtist(artist9);
         art8.setTitle("Self-Portrait with Thorn Necklace and Hummingbird");
         art8.setDescription("Frida Kahlo's 'Self-Portrait with Thorn Necklace and Hummingbird' reflects her pain, resilience, and indomitable spirit.");
         art8.setMedium("Oil Painting on Canvas");
@@ -217,9 +193,9 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art8.setImage("https://upload.wikimedia.org/wikipedia/en/1/1e/Frida_Kahlo_%28self_portrait%29.jpg");
         artPieceRepository.save(art8);
 
-// For Johannes Vermeer
+
         ArtPiece art9 = new ArtPiece();
-        art9.setArtist(artist10); // Johannes Vermeer
+        art9.setArtist(artist10);
         art9.setTitle("Girl with a Pearl Earring");
         art9.setDescription("Johannes Vermeer's 'Girl with a Pearl Earring' captivates viewers with a young woman's mesmerizing gaze.");
         art9.setMedium("Oil Painting on Canvas");
