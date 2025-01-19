@@ -54,8 +54,9 @@
     <div class="container d-flex align-items-center justify-content-between">
         <div>
             <form method="get" th:action="@{gallery}">
-                <label>Keyword:</label>
+                <label>Keyword:
                 <input type="text" name="search" th:value="${search}">
+                </label>
                 <button type="submit" class="btn btn-dark">
                     <i class="bi bi-search"></i>
                 </button>
