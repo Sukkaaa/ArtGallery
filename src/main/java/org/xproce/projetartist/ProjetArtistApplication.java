@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 
 @SpringBootApplication
 public class ProjetArtistApplication implements CommandLineRunner {
-
+String OPC="Oil Painting on Canvas";
     @Autowired
     public ArtistRepository artistRepository;
 
@@ -110,7 +110,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art11.setArtist(artist2);
         art11.setTitle("Starry Night");
         art11.setDescription("Van Gogh's 'Starry Night' captivates with swirling colors and dreamlike imagery.");
-        art11.setMedium("Oil Painting on Canvas");
+        art11.setMedium(OPC);
         art11.setDimensions("73.7 cm × 92.1 cm");
         art11.setPrice(BigDecimal.valueOf(200000000));
         art11.setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK_fDw2BwRYJa-nzmGmeHsFQOg7HA_-KmfcL--f-bMSg&s");
@@ -132,7 +132,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art3.setArtist(artist4);
         art3.setTitle("Water Lilies");
         art3.setDescription("Monet's 'Water Lilies' series captures the ephemeral beauty of nature with vibrant colors.");
-        art3.setMedium("Oil Painting on Canvas");
+        art3.setMedium(OPC);
         art3.setDimensions("Various sizes");
         art3.setPrice(BigDecimal.valueOf(70400000));
         art3.setImage("https://collectionapi.metmuseum.org/api/collection/v1/iiif/438008/preview");
@@ -143,7 +143,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art4.setArtist(artist5);
         art4.setTitle("The Persistence of Memory");
         art4.setDescription("Dalí's 'Persistence of Memory' challenges perceptions of time and reality with surreal imagery.");
-        art4.setMedium("Oil Painting on Canvas");
+        art4.setMedium(OPC);
         art4.setDimensions("24 cm × 33 cm");
         art4.setPrice(BigDecimal.valueOf(150000000));
         art4.setImage("https://cdn.britannica.com/96/240496-138-66D89FAD/Salvador-Dali-Persistence-of-Memory.jpg?w=800&h=450&c=crop");
@@ -154,7 +154,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art5.setArtist(artist6);
         art5.setTitle("Red Canna");
         art5.setDescription("O'Keeffe's 'Red Canna' celebrates nature's beauty with vibrant colors and bold strokes.");
-        art5.setMedium("Oil Painting on Canvas");
+        art5.setMedium(OPC);
         art5.setDimensions("40.7 cm × 30.5 cm");
         art5.setPrice(BigDecimal.valueOf(44405000));
         art5.setImage("https://upload.wikimedia.org/wikipedia/en/c/ca/Red_Canna_%281924%29_by_Georgia_O%27Keeffe.jpg");
@@ -176,7 +176,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art7.setArtist(artist8);
         art7.setTitle("The Night Watch");
         art7.setDescription("Rembrandt's 'The Night Watch' epitomizes the drama and dynamism of Baroque painting, capturing civic guardsmen in vivid detail.");
-        art7.setMedium("Oil Painting on Canvas");
+        art7.setMedium(OPC);
         art7.setDimensions("363 cm × 437 cm");
         art7.setId(Long.valueOf(500000000));
         art7.setImage("https://ychef.files.bbci.co.uk/1280x720/p070wbmx.jpg");
@@ -187,7 +187,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art8.setArtist(artist9);
         art8.setTitle("Self-Portrait with Thorn Necklace and Hummingbird");
         art8.setDescription("Frida Kahlo's 'Self-Portrait with Thorn Necklace and Hummingbird' reflects her pain, resilience, and indomitable spirit.");
-        art8.setMedium("Oil Painting on Canvas");
+        art8.setMedium(OPC);
         art8.setDimensions("61 cm × 47 cm");
         art8.setPrice(BigDecimal.valueOf(34500000));
         art8.setImage("https://upload.wikimedia.org/wikipedia/en/1/1e/Frida_Kahlo_%28self_portrait%29.jpg");
@@ -198,7 +198,7 @@ public class ProjetArtistApplication implements CommandLineRunner {
         art9.setArtist(artist10);
         art9.setTitle("Girl with a Pearl Earring");
         art9.setDescription("Johannes Vermeer's 'Girl with a Pearl Earring' captivates viewers with a young woman's mesmerizing gaze.");
-        art9.setMedium("Oil Painting on Canvas");
+        art9.setMedium(OPC);
         art9.setDimensions("44.5 cm × 39 cm");
         art9.setPrice(BigDecimal.valueOf(300000000));
         art9.setImage("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/800px-1665_Girl_with_a_Pearl_Earring.jpg");
