@@ -1,7 +1,6 @@
 package org.xproce.projetartist.metier;
 
 import org.xproce.projetartist.dao.entities.ArtPiece;
-import org.xproce.projetartist.dao.entities.Inventory;
 import org.xproce.projetartist.dao.repositories.ArtPieceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

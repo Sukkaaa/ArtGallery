@@ -3,7 +3,6 @@ package org.xproce.projetartist.metier;
 import org.xproce.projetartist.dao.entities.ArtPiece;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
-import org.xproce.projetartist.dao.entities.Inventory;
 
 @Component
 public interface ArtPieceManager {
