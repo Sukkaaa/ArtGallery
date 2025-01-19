@@ -43,8 +43,9 @@
             </a>
             <div class="card-body">
                 <form method="get" th:action="@{artists}">
-                    <label>Keyword:</label>
+                    <label>Keyword:
                     <input type="text" name="search" th:value="${search}">
+                    </label>
                     <button type="submit" class="btn btn-dark">
                         <i class="bi bi-search"></i>
                     </button>
