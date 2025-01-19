@@ -16,29 +16,27 @@ import org.xproce.projetartist.metier.ArtistManager;
 
 @Controller
 public class ArtistController {
+    String artist = "artists";
     @Autowired
     private ArtistManager artistManager;
     @Autowired
     private ArtistRepository artistRepository;
 
     @GetMapping("/artists")
-    public String artists(Model model, @RequestParam(name="search",defaultValue = "")String search,//keyword
-                                        @RequestParam(name="page",defaultValue="0") int page,//page
-                                        @RequestParam(name="size",defaultValue = "5") int size//taille
+    public String artists(Model model, @RequestParam(name="search",defaultValue = "")String search,
+                                        @RequestParam(name="page",defaultValue="0") int page,
+                                        @RequestParam(name="size",defaultValue = "5") int size
 
 
     ){
-        //String searchName="";
-        //int pageNumber=0;
-        //int pageSize=5;
+
         Page<Artist> pageartists= artistManager.searchArtist(search,page,size);
         model.addAttribute("listArtists",pageartists.getContent());
-        int[] pages=new int[pageartists.getTotalPages()];
-        model.addAttribute("pages",new int[pageartists.getTotalPages()]);//pages //nombre de page stocké dans le model
-        model.addAttribute("search",search);//keyword
-        model.addAttribute("page",page);//page
+        model.addAttribute("pages",new int[pageartists.getTotalPages()]);
+        model.addAttribute("search",search);
+        model.addAttribute("page",page);
         model.addAttribute("currentPage",page);
-        return "artists"; //artists is the name of the View
+        return "artists";
     }
 
     @GetMapping("/delete")

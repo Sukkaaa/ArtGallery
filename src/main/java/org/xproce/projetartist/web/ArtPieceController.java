@@ -7,9 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.xproce.projetartist.dao.entities.ArtPiece;
-import org.xproce.projetartist.dao.entities.Artist;
 import org.xproce.projetartist.metier.ArtPieceManager;
-import org.xproce.projetartist.metier.ArtistManager;
 
 @Controller
 public class ArtPieceController {
@@ -27,18 +25,9 @@ public class ArtPieceController {
         model.addAttribute("page",page);
         model.addAttribute("currentPage",page);
 
-        return "gallery";//artPieces is the name of the View (what is typed in the url)
+        return "gallery";
     }
-    /*public String delete(Long id)
-    {
-        artPieceManager.deleteArtPiece(id);
-        return "redirect:/artPieces";
-    }
-    @GetMapping("/about")
-    public String about()
-    {
-        return "about";
-    }*/
+
     @GetMapping("/newart")
     public String newArtist(Model model)
     {
